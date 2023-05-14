@@ -128,7 +128,8 @@ public class DiceParser{
 						   Vector<DieRoll> v){
 	Vector<DieRoll> r=parseXDice(ss);
 	if(r==null) {
-	    return null
+//		return null -> return null;
+	    return null;
 	}
 	v.addAll(r);
 	if(ss.checkAndEat(";")){
@@ -138,7 +139,8 @@ public class DiceParser{
     }
     private static Vector<DieRoll> parseXDice(StringStream ss) {
 	StringStream saved=ss.save();
-	Integer x=ssgetInt();
+//	ssgetint() -> ss.getInt()
+	Integer x=ss.getInt();
 	int num;
 	if(x==null) {
 	    num=1;
@@ -148,7 +150,8 @@ public class DiceParser{
 		num=x;
 	    }
 	    else {
-		num 1;
+//	   num 1 -> num=1
+		num= 1;
 		ss.restore(saved);
 	    }
 	}
@@ -211,7 +214,8 @@ public class DiceParser{
 	    return null;
 	if(ss.checkAndEat("&")) {
 	    DieRoll d2=parseDice(ss);
-//	    return parseDTail(new DiceSum(r1,d2),ss);
+//	    unlock
+	    return parseDTail(new DiceSum(r1,d2),ss);
 	}
 	else {
 	    return r1;
@@ -232,7 +236,8 @@ public class DiceParser{
 	    }
 	}
     }
-    public static void main String[] args  {
+//    main String[] args -> main (Sting[] args)
+    public static void main (String[] args)  {
 	test("d6");
 	test("2d6");
 	test("d6+5");
