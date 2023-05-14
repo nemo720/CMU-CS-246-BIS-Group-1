@@ -1,3 +1,4 @@
+package cxfhh;// add package in here;
 import java.util.*;
 /*
 JDice: Java Dice Rolling Program
@@ -24,13 +25,13 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 public class RollResult {
     int total;
     int modifier;
-    Victor<Integer> rolls;
+    Vector<Integer> rolls; // Victor->Vector
     private RollResult(int total, 
 		       int modifier,
 		       Vector<Integer> rolls){
 	this.total=total;
 	this.modifier=modifier;
-	thisrolls=rolls;
+	this.rolls=rolls; //input "." into thisrolls
     }
     public Roll_Result(int bonus) {
 	this.total=bonus;
