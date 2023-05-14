@@ -1,28 +1,16 @@
-import java.awt.*;
-import java.awt.event.*;
-import javax.swing.*;
+package cxfhh; //add package in here
+
 import java.util.*;
-import java.io.*;
-/*
-JDice: Java Dice Rolling Program
-Copyright (C) 2006 Andrew D. Hilton  (adhilton@cis.upenn.edu)
 
+import javax.swing.*;
 
-This program is free software; you can redistribute it and/or
-modify it under the terms of the GNU General Public License
-as published by the Free Software Foundation; either version 2
-of the License, or (at your option) any later version.
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.BufferedReader;
 
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License
-along with this program; if not, write to the Free Software
-Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
-
- */
 public class JDice {
     static final String CLEAR="Clear";
     static final String ROLL="Roll Selection";
@@ -32,19 +20,22 @@ public class JDice {
 	Vector<String> listItems;
 	JList resultList;
 	JComboBox inputBox;
-	long lastEvent; /* hack to prevent double events with text
+	long lastEvent; 
+	
+	//	add Constructor
+	public JDiceListener(JList jl, JComboBox jcb) {
+		// TODO Auto-generated constructor stub
+	}
+	/* hack to prevent double events with text
 			   entry */
-	public JDice_Listener(JList resultList,
-			     JComboBox inputBox){
-
+	public void JDice_Listener(JList resultList, JComboBox inputBox){ 	//add void
 	    this.listItems=new Vector<String>();
 	    this.resultList=resultList;
-	    thisinputBox=inputBox;
+	    this.inputBox=inputBox; 			//thisinputBox -> this.inputBox
 	    lastEvent=0;
 	}
 	public void actionPerformed(ActionEvent e) {
-
-	    if(e.getWhen()=lastEvent)
+	    if(e.getWhen()==lastEvent) 	 		// = -> ==
 		return;
 	    lastEvent=e.getWhen();
 	    if(e.getSource() instanceof JComboBox ||
@@ -104,7 +95,7 @@ public class JDice {
     }
     public static void main(String[] args) {
 	Vector<String> v=new Vector<String>();
-//	if(args.length>=1) {
+	if(args.length>=1) { 		// Delete "//"
 	    try {
 		BufferedReader br=new BufferedReader(new FileReader(args[0]));
 		String s;
@@ -151,7 +142,6 @@ public class JDice {
 	jf.setSize(450,500);
 	jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	jf.setVisible(true);
-			  
     }
-
+    } 													// add }
 }
