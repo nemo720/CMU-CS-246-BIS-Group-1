@@ -20,19 +20,19 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
 
 public class DiceSum extends DieRoll {
-
-    private DieRoll r2;
-    public Dice-Sum(DieRoll r1,
-		   DieRoll r2) {
-	super(0);
-	this.r1=r1;
-	this.r2 r2;
+    
+    private DieRoll r1,r2;                         //missing r2
+    public  DiceSum(DieRoll r1 ,  DieRoll r2) {    //Dice-Sum->DiceSum
+	super(0,0,0);                                  //super(0)->super(0,0,0)
+	this.r1=r1;                                    
+	this.r2 =r2;                                   //r2 r2->r2=r2
     }
-    public RollResult makeRoll() {
+    
+	public RollResult makeRoll() {
 	return r1.makeRoll().andThen(r2.makeRoll());
     }
     public String toString() {
-	return r1toString() + " & "+r2.toString();
+	return r1.toString() + " & "+r2.toString();    //r1toString->r1.toString
     }
 
 }
