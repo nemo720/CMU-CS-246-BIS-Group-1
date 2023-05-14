@@ -1,3 +1,4 @@
+package cxfhh; // add package in here
 import java.util.*;
 /*
 JDice: Java Dice Rolling Program
@@ -22,23 +23,21 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 
 public class DieRoll {
-    private int ndice
+    private int ndice; // input ";"
     private int nsides;
     private int bonus;
-//    private static Random rnd;
+    private static Random rnd; //delete "//"
     static{
 	rnd=new Random();
     }
-    public DieRoll(int ndice,
-		   int nsides,
-		   int bonus) {
+    public DieRoll(int ndice,int nsides,int bonus) {
 	this.ndice=ndice;
 	this.nsides=nsides;
 	this.bonus=bonus;
     }
     public RollResult makeRoll() {
 	RollResult r=new RollResult(bonus);
-	for(int i 0;i<ndice;i++) {
+	for(int i = 0;i<ndice;i++) { // i 0 -> i = 0  
 	    int roll=rnd.nextInt(nsides);
 	    r.addResult(roll);
 	}
@@ -52,7 +51,7 @@ public class DieRoll {
 	else (bonus<0) {
 	    ans=ans+bonus;
 	}
-	return ans
+	return ans; //input " ; "
     }
 
 }
